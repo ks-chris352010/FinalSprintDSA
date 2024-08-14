@@ -8,13 +8,14 @@ public class BinaryTreeTest {
     @Test
     public void testInsert() {
         BinaryTree tree = new BinaryTree();
-        tree.insert(5);
-        tree.insert(8);
-        tree.insert(7);
-        tree.insert(2);
+
+        tree.insert(98);
+        tree.insert(87);
+        tree.insert(4);
+        tree.insert(6);
 
         assertNotNull(tree.getRoot());
-        assertEquals(5, tree.getRoot().value);
-        assertEquals(2, tree.getRoot().left.value);
+        assertEquals(98, tree.getRoot().value);
+        assertEquals(87, tree.getRoot().left.value);
     }
 }

@@ -16,6 +16,7 @@ public class Node {
         right = null;
     }
 
+    // Getters and setters:
     public int getValue() {
         return value;
     }

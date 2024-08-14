@@ -10,7 +10,6 @@ public class BinaryTree {
         root = null;
     }
 
-    // Inserting methods
     public void insert(int data) {
         root = insertRecord(root, data);
     }
@@ -28,7 +27,6 @@ public class BinaryTree {
         return root;
     }
 
-    // Returns the tree as a string:
     public String treeToString() {
         if (root == null) {
             return "Tree is empty";
@@ -49,8 +47,12 @@ public class BinaryTree {
         return result.toString();
     }
 
-    // Get root method:
+    // Getters and setters:
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
     public Node getRoot() {
-        return root;
+        return this.root;
     }
 }

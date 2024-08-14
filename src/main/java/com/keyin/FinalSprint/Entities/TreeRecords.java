@@ -10,17 +10,16 @@ public class TreeRecords {
     private long id;
     private String inputNumbers;
 
-    @Column(length = 2000)
+    @Column(length = 1000)
     private String treeStructure;
 
 
-    // Getters and Setters:
+    // Getters and setters:
     public long getId() {
         return id;
     }
 
     public String getInputNumbers() {
-
         return inputNumbers;
     }
 
@@ -29,7 +28,6 @@ public class TreeRecords {
     }
 
     public void setId(long id) {
-
         this.id = id;
     }
 

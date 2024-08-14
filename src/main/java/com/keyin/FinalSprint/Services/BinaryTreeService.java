@@ -11,15 +11,27 @@ public class BinaryTreeService {
     private BinaryTree binaryTree;
 
     public void processUserNums(String nums) {
+        if (nums == null || nums.trim().isEmpty()) {
+            throw new IllegalArgumentException("Input string is null or empty");
+        }
+
         String[] numArray = nums.split(",");
         binaryTree = new BinaryTree();
         for (String num : numArray) {
-            int numInt = Integer.parseInt(num);
-            binaryTree.insert(numInt);
+            try {
+                int numInt = Integer.parseInt(num.trim());
+                binaryTree.insert(numInt);
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("Invalid number format: " + num, e);
+            }
         }
     }
 
     public String convertTreeToJson(Node root) throws JsonProcessingException {
+        if (root == null) {
+            throw new IllegalArgumentException("Root node is null");
+        }
+
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(root);
     }
